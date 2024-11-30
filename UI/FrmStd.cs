@@ -17,17 +17,33 @@ namespace UI
         public FrmStd()
         {
             InitializeComponent();
+            dataGridView1.AutoGenerateColumns = false;
         }
+
+
+
+
+
+        public delegate void OnUpdateDBHandler();
+        public event OnUpdateDBHandler OnUpdateDB;
+
+
+
+
+
+
+
         private readonly static StudentLogic studentLogic = new StudentLogic();
         private void button1_Click(object sender, EventArgs e)
         {
             FrmAddSTD frmAddSTD = new FrmAddSTD();
+            frmAddSTD.OnUpdateDB += () => { dataGridView1.DataSource=studentLogic.GetAllStd(); } ;
             frmAddSTD.ShowDialog();
         }
 
         private void FrmStd_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource= studentLogic.GetAllStd();
+            dataGridView1.DataSource = studentLogic.GetAllStd();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -39,15 +55,20 @@ namespace UI
             }
             else if (e.ColumnIndex == 1)//remove
             {
-       
+
                 int id = int.Parse(dataGridView1.CurrentRow.Cells[2].Value.ToString());
                 studentLogic.DelStdById(id);
-                dataGridView1.DataSource= null;
-                dataGridView1.DataSource= studentLogic.GetAllStd();
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = studentLogic.GetAllStd();
                 dataGridView1.Update();
                 dataGridView1.Refresh();
             }
-            
+            else if (e.ColumnIndex == 5)
+            {
+                new FrmCourseRegitration(int.Parse(dataGridView1.CurrentRow.Cells[2].Value.ToString())).ShowDialog();
+            }
+
+
         }
     }
 }

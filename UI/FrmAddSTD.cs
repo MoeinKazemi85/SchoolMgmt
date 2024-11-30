@@ -18,15 +18,25 @@ namespace UI
         {
             InitializeComponent();
         }
-       public static readonly StudentLogic studentLogic=new StudentLogic();
+        public static readonly StudentLogic studentLogic = new StudentLogic();
+        public delegate void OnUpdateDBHandler();
+        public event OnUpdateDBHandler OnUpdateDB;
         private void button1_Click(object sender, EventArgs e)
         {
             //crete std
-            Student newStudent=new Student(); 
-            newStudent.Name=textBox1.Text;
-            newStudent.Registered=false;
-            studentLogic.AddStd(newStudent);
-            studentLogic.registeration(newStudent);
+            try
+            {
+                Student newStudent = new Student();
+                newStudent.Name = textBox1.Text;
+                newStudent.Registered = false;
+                studentLogic.AddStd(newStudent);
+                studentLogic.registeration(newStudent);
+                if (OnUpdateDB != null) OnUpdateDB();
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FrmAddSTD_Load(object sender, EventArgs e)
@@ -43,7 +53,7 @@ namespace UI
 
             // Combine the items into one list (optional)
             var combinedList = new List<object>();
-            combinedList.AddRange(allSemesters); 
+            combinedList.AddRange(allSemesters);
             var combinedList2 = new List<object>();
             combinedList2.AddRange(allCourses);
             // Add items to the ComboBox

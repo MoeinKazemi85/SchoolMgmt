@@ -41,6 +41,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ColEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColRemove = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Registered = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnShowCourse = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -55,7 +59,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1067, 554);
             this.panel1.TabIndex = 0;
@@ -65,7 +69,7 @@
             this.panel4.Controls.Add(this.dataGridView1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(188, 71);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(879, 483);
             this.panel4.TabIndex = 2;
@@ -75,10 +79,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColEdit,
-            this.ColRemove});
+            this.ColRemove,
+            this.StudentID,
+            this.ColName,
+            this.Registered,
+            this.btnShowCourse});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(879, 483);
@@ -90,7 +98,7 @@
             this.panel3.Controls.Add(this.button1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 71);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(188, 483);
             this.panel3.TabIndex = 1;
@@ -99,7 +107,7 @@
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(188, 42);
             this.button1.TabIndex = 0;
@@ -116,7 +124,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1067, 71);
             this.panel2.TabIndex = 0;
@@ -124,7 +132,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(940, 18);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(60, 39);
             this.button2.TabIndex = 2;
@@ -134,7 +142,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(637, 27);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(235, 22);
             this.textBox2.TabIndex = 1;
@@ -142,7 +150,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(177, 27);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(235, 22);
             this.textBox1.TabIndex = 1;
@@ -185,13 +193,48 @@
             this.ColRemove.Text = "remove";
             this.ColRemove.Width = 125;
             // 
+            // StudentID
+            // 
+            this.StudentID.DataPropertyName = "StudentsID";
+            this.StudentID.HeaderText = "StudentID";
+            this.StudentID.MinimumWidth = 6;
+            this.StudentID.Name = "StudentID";
+            this.StudentID.ReadOnly = true;
+            this.StudentID.Width = 125;
+            // 
+            // ColName
+            // 
+            this.ColName.DataPropertyName = "Name";
+            this.ColName.HeaderText = "Name";
+            this.ColName.MinimumWidth = 6;
+            this.ColName.Name = "ColName";
+            this.ColName.ReadOnly = true;
+            this.ColName.Width = 125;
+            // 
+            // Registered
+            // 
+            this.Registered.DataPropertyName = "Registered";
+            this.Registered.HeaderText = "Registered";
+            this.Registered.MinimumWidth = 6;
+            this.Registered.Name = "Registered";
+            this.Registered.ReadOnly = true;
+            this.Registered.Width = 125;
+            // 
+            // btnShowCourse
+            // 
+            this.btnShowCourse.HeaderText = "btnShowCourse";
+            this.btnShowCourse.MinimumWidth = 6;
+            this.btnShowCourse.Name = "btnShowCourse";
+            this.btnShowCourse.ReadOnly = true;
+            this.btnShowCourse.Width = 125;
+            // 
             // FrmStd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmStd";
             this.Text = "FrmStd";
             this.Load += new System.EventHandler(this.FrmStd_Load);
@@ -220,5 +263,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewButtonColumn ColEdit;
         private System.Windows.Forms.DataGridViewButtonColumn ColRemove;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Registered;
+        private System.Windows.Forms.DataGridViewButtonColumn btnShowCourse;
     }
 }

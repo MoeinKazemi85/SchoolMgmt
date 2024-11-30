@@ -20,6 +20,10 @@ namespace BLL.Logic
         }
         public void AddStd(Student student)
         {
+            if (GetAllStd().Where(c=>c.Name==student.Name).Any())
+            {
+                throw new Exception("tekrari ast");
+            }
             schoolContext.Students.Add(student);
             schoolContext.SaveChanges();
         }
