@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL.Logic;
+using DAL.Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +18,15 @@ namespace UI
         {
             InitializeComponent();
         }
+       public static readonly StudentLogic studentLogic=new StudentLogic();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //crete std
+            Student newStudent=new Student(); 
+            newStudent.Name=textBox1.Text;
+            newStudent.Registered=false;
+            studentLogic.AddStd(newStudent);
+        }
+        
     }
 }

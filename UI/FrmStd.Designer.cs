@@ -39,6 +39,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ColEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ColRemove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -69,11 +71,15 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColEdit,
+            this.ColRemove});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(659, 392);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel3
             // 
@@ -149,6 +155,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Search Name";
             // 
+            // ColEdit
+            // 
+            this.ColEdit.HeaderText = "edit";
+            this.ColEdit.Name = "ColEdit";
+            this.ColEdit.ReadOnly = true;
+            // 
+            // ColRemove
+            // 
+            this.ColRemove.HeaderText = "remove";
+            this.ColRemove.Name = "ColRemove";
+            this.ColRemove.ReadOnly = true;
+            // 
             // FrmStd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,5 +199,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewButtonColumn ColEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn ColRemove;
     }
 }
