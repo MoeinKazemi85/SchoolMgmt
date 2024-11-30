@@ -35,37 +35,42 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(62, 353);
+            this.button1.Location = new System.Drawing.Point(83, 434);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 42);
+            this.button1.Size = new System.Drawing.Size(205, 52);
             this.button1.TabIndex = 0;
             this.button1.Text = "save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(78, 70);
+            this.textBox1.Location = new System.Drawing.Point(104, 86);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 20);
+            this.textBox1.Size = new System.Drawing.Size(188, 22);
             this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 73);
+            this.label1.Location = new System.Drawing.Point(29, 90);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.Size = new System.Drawing.Size(48, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "course";
             // 
             // frmAddCourse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(280, 450);
+            this.ClientSize = new System.Drawing.Size(373, 554);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmAddCourse";
             this.Text = "frmAddCourse";
             this.ResumeLayout(false);

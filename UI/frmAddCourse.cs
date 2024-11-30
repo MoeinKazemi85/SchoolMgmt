@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL.Logic;
+using DAL.Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,14 @@ namespace UI
         public frmAddCourse()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CourseLogic courseLogic = new CourseLogic();
+            Cours cours = new Cours();
+            cours.CourseName=textBox1.Text;
+            courseLogic.AddCrs(cours);
         }
     }
 }

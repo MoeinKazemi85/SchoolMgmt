@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL.Logic;
+using DAL.Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,13 @@ namespace UI
         public FrmAddSemesters()
         {
             InitializeComponent();
+        }
+        private static readonly SemesterLogic semesterLogic =new SemesterLogic();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Semester newSemester = new Semester();
+            newSemester.Semesters = textBox1.Text;
+            semesterLogic.AddSemesters(newSemester);
         }
     }
 }

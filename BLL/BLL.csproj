@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic\CourseLogic.cs" />
+    <Compile Include="Logic\SemesterLogic.cs" />
     <Compile Include="Logic\StudentLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
