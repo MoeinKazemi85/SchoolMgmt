@@ -24,9 +24,11 @@ namespace BLL.Logic
             schoolContext.SaveChanges();
         }
 
-        public void DelStdById(Student std)
+        public void DelStdById(int id)
         {
-            schoolContext.Students.Remove(std);
+            Student student = schoolContext.Students.Find(id);
+            schoolContext.Students.Remove(student);
+            
             schoolContext.SaveChanges();
         }
         public void UpdateStd()
@@ -37,6 +39,19 @@ namespace BLL.Logic
         { 
             var std=schoolContext.Students.Find(studentID);
             return std;
+        }
+        public void registeration(Student student) 
+        {
+            //check if student has selected unit
+            int courseCount=schoolContext.CourseRegisterations.Where(c=>c.StudentID==student.StudentsID).Count();
+            //check if student has made Payment
+            int paymentCont=schoolContext.FeePayments.Where(f=>f.StudentID==student.StudentsID).Count();
+            //if both are true registeration =true or 1
+            if (courseCount > 0 && paymentCont > 0)
+            {
+                student.Registered=true;
+                schoolContext.SaveChanges();
+            }      
         }
     }
 }

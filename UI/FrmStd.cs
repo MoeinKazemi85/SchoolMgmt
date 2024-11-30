@@ -39,10 +39,9 @@ namespace UI
             }
             else if (e.ColumnIndex == 1)//remove
             {
-                Student std=new Student();
+       
                 int id = int.Parse(dataGridView1.CurrentRow.Cells[2].Value.ToString());
-                std = schoolContext.Students.Where(c => c.StudentsID == id).First();
-                studentLogic.DelStdById(std);
+                studentLogic.DelStdById(id);
                 dataGridView1.DataSource= null;
                 dataGridView1.DataSource= studentLogic.GetAllStd();
                 dataGridView1.Update();
