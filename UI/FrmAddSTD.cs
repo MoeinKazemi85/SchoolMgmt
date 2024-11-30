@@ -26,6 +26,7 @@ namespace UI
             newStudent.Name=textBox1.Text;
             newStudent.Registered=false;
             studentLogic.AddStd(newStudent);
+            studentLogic.registeration(newStudent);
         }
         
     }
