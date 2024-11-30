@@ -28,6 +28,30 @@ namespace UI
             studentLogic.AddStd(newStudent);
             studentLogic.registeration(newStudent);
         }
-        
+
+        private void FrmAddSTD_Load(object sender, EventArgs e)
+        {
+            SemesterLogic semesterLogic = new SemesterLogic();
+            CourseLogic courseLogic = new CourseLogic();
+
+            var allSemesters = semesterLogic.GetAllSemesters();
+            var allCourses = courseLogic.GetAllCourse();
+
+            // Set the property to display in the ComboBox
+            comboBox1.DisplayMember = "Semesters";
+            comboBox2.DisplayMember = "CourseName";
+
+            // Combine the items into one list (optional)
+            var combinedList = new List<object>();
+            combinedList.AddRange(allSemesters); 
+            var combinedList2 = new List<object>();
+            combinedList2.AddRange(allCourses);
+            // Add items to the ComboBox
+            comboBox1.Items.AddRange(combinedList.ToArray());
+            comboBox2.Items.AddRange(combinedList2.ToArray());
+
+
+
+        }
     }
 }
