@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL.Logic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +17,16 @@ namespace UI
         {
             InitializeComponent();
         }
-
+        private readonly static StudentLogic studentLogic = new StudentLogic();
         private void button1_Click(object sender, EventArgs e)
         {
             FrmAddSTD frmAddSTD = new FrmAddSTD();
             frmAddSTD.ShowDialog();
+        }
+
+        private void FrmStd_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource= studentLogic.GetAllStd();
         }
     }
 }

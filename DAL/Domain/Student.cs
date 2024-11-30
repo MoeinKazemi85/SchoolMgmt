@@ -22,7 +22,7 @@ namespace DAL.Domain
         [StringLength(100)]
         public string Name { get; set; }
 
-        public DateTime Registered { get; set; }
+        public bool Registered { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CourseRegisteration> CourseRegisterations { get; set; }
