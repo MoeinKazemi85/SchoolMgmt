@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL.Logic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +17,19 @@ namespace UI
         {
             InitializeComponent();
         }
+        private readonly static SemesterLogic semesterLogic= new SemesterLogic();
 
         private void button1_Click(object sender, EventArgs e)
         {
             FrmAddSemesters frmAddSemesters = new FrmAddSemesters();    
             frmAddSemesters.ShowDialog();
+        }
+
+        private void FrmSemesters_Load(object sender, EventArgs e)
+        {
+            var allSemester=semesterLogic.GetAllSemesters();
+            dataGridView1.DataSource = allSemester;
+            
         }
     }
 }
