@@ -1,5 +1,4 @@
-﻿using BLL.Logic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,24 +10,17 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class FrmSelectORM : Form
+    public partial class FrmStd : Form
     {
-        public FrmSelectORM()
+        public FrmStd()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 0) 
-            {
-                //EF
-            }
-            else if (comboBox1.SelectedIndex == 1)
-            {
-                //ADO
-            }
-            new FrmMain().ShowDialog();
+            FrmAddSTD frmAddSTD = new FrmAddSTD();
+            frmAddSTD.ShowDialog();
         }
     }
 }

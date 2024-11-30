@@ -42,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,16 +54,79 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCourse.Designer.cs">
+      <DependentUpon>frmAddCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddSemesters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddSemesters.Designer.cs">
+      <DependentUpon>FrmAddSemesters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddSTD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddSTD.Designer.cs">
+      <DependentUpon>FrmAddSTD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCourse.Designer.cs">
+      <DependentUpon>FrmCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSelectORM.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmSelectORM.Designer.cs">
       <DependentUpon>FrmSelectORM.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSemesters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSemesters.Designer.cs">
+      <DependentUpon>FrmSemesters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStd.Designer.cs">
+      <DependentUpon>FrmStd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAddCourse.resx">
+      <DependentUpon>frmAddCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddSemesters.resx">
+      <DependentUpon>FrmAddSemesters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddSTD.resx">
+      <DependentUpon>FrmAddSTD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCourse.resx">
+      <DependentUpon>FrmCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSelectORM.resx">
       <DependentUpon>FrmSelectORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSemesters.resx">
+      <DependentUpon>FrmSemesters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStd.resx">
+      <DependentUpon>FrmStd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
