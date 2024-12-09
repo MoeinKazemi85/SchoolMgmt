@@ -53,6 +53,7 @@
     <Compile Include="Domain\Cours.cs" />
     <Compile Include="Domain\CourseRegisteration.cs" />
     <Compile Include="Domain\FeePayment.cs" />
+    <Compile Include="Domain\RegCourse.cs" />
     <Compile Include="Domain\SchoolContext.cs" />
     <Compile Include="Domain\Semester.cs" />
     <Compile Include="Domain\Student.cs" />

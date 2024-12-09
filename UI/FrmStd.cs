@@ -51,7 +51,10 @@ namespace UI
             SchoolContext schoolContext = new SchoolContext();
             if (e.ColumnIndex == 0) //edit
             {
-
+                int id = int.Parse(dataGridView1.CurrentRow.Cells[2].Value.ToString());
+                FrmAddSTD frmStd = new FrmAddSTD(id);
+                frmStd.Text = "FrmEditSTD";
+                frmStd.ShowDialog();
             }
             else if (e.ColumnIndex == 1)//remove
             {
@@ -67,7 +70,10 @@ namespace UI
             {
                 new FrmCourseRegitration(int.Parse(dataGridView1.CurrentRow.Cells[2].Value.ToString())).ShowDialog();
             }
-
+            else if (e.ColumnIndex == 6)
+            {
+                new FrmRegisterCourse(int.Parse(dataGridView1.CurrentRow.Cells[2].Value.ToString())).ShowDialog();
+            }
 
         }
     }
