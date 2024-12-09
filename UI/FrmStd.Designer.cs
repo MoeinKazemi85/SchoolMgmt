@@ -46,6 +46,7 @@
             this.Registered = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnShowCourse = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColReg = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ColRegCourse = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -83,7 +84,8 @@
             this.ColName,
             this.Registered,
             this.btnShowCourse,
-            this.ColReg});
+            this.ColReg,
+            this.ColRegCourse});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
@@ -225,6 +227,12 @@
             this.ColReg.Name = "ColReg";
             this.ColReg.ReadOnly = true;
             // 
+            // ColRegCourse
+            // 
+            this.ColRegCourse.HeaderText = "Edit RegCourse";
+            this.ColRegCourse.Name = "ColRegCourse";
+            this.ColRegCourse.ReadOnly = true;
+            // 
             // FrmStd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,5 +272,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Registered;
         private System.Windows.Forms.DataGridViewButtonColumn btnShowCourse;
         private System.Windows.Forms.DataGridViewButtonColumn ColReg;
+        private System.Windows.Forms.DataGridViewButtonColumn ColRegCourse;
     }
 }

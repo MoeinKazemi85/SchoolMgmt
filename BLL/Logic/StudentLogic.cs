@@ -13,8 +13,8 @@ namespace BLL.Logic
     public class StudentLogic
     {
         //CRUD (Create,Update,Select,Delete)
-        private readonly SchoolContext schoolContext=new SchoolContext();
-        public IEnumerable<Student> GetAllStd()
+        private  SchoolContext schoolContext=new SchoolContext();
+        public List<Student> GetAllStd()
         {
             return schoolContext.Students.ToList();
         }
@@ -35,8 +35,10 @@ namespace BLL.Logic
             
             schoolContext.SaveChanges();
         }
-        public void UpdateStd()
+        public void UpdateStd(int id,string name)
         {
+            var student = schoolContext.Students.Where(c => c.StudentsID == id).Single();
+            student.Name = name;
             schoolContext.SaveChanges();
         }
         public Student GetStudents(int studentID) 

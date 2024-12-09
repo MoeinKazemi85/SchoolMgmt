@@ -38,8 +38,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.cmbRowIndex = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,6 +134,15 @@
             this.panel1.Size = new System.Drawing.Size(229, 159);
             this.panel1.TabIndex = 12;
             // 
+            // cmbRowIndex
+            // 
+            this.cmbRowIndex.FormattingEnabled = true;
+            this.cmbRowIndex.Location = new System.Drawing.Point(88, 12);
+            this.cmbRowIndex.Name = "cmbRowIndex";
+            this.cmbRowIndex.Size = new System.Drawing.Size(121, 21);
+            this.cmbRowIndex.TabIndex = 13;
+            this.cmbRowIndex.SelectedIndexChanged += new System.EventHandler(this.cmbRowIndex_SelectedIndexChanged);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -142,14 +151,6 @@
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "row index";
-            // 
-            // cmbRowIndex
-            // 
-            this.cmbRowIndex.FormattingEnabled = true;
-            this.cmbRowIndex.Location = new System.Drawing.Point(88, 12);
-            this.cmbRowIndex.Name = "cmbRowIndex";
-            this.cmbRowIndex.Size = new System.Drawing.Size(121, 21);
-            this.cmbRowIndex.TabIndex = 13;
             // 
             // FrmAddSTD
             // 

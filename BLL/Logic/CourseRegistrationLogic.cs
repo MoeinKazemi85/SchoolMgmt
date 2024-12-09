@@ -26,5 +26,16 @@ namespace BLL.Logic
                 )
                 .ToList();
         }
+        public void UpdateStudentByID(int rowIndex, int studentID, int courseID, int semesterID)
+        {
+           
+            var course = schoolContext.CourseRegisterations.Where(s => s.SemestersID == studentID).ToList()[rowIndex-1];
+            course.StudentID = studentID;
+            course.CourseID = courseID;
+            course.SemestersID = semesterID;
+            schoolContext.SaveChanges();
+
+
+        }
     }
 }

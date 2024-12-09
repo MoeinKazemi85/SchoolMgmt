@@ -37,7 +37,7 @@ namespace UI
         private void button1_Click(object sender, EventArgs e)
         {
             FrmAddSTD frmAddSTD = new FrmAddSTD();
-            frmAddSTD.OnUpdateDB += () => { dataGridView1.DataSource=studentLogic.GetAllStd(); } ;
+            frmAddSTD.OnUpdateDB += () => { dataGridView1.DataSource=studentLogic.GetAllStd().ToList(); } ;
             frmAddSTD.ShowDialog();
         }
 
@@ -54,6 +54,8 @@ namespace UI
                 int id = int.Parse(dataGridView1.CurrentRow.Cells[2].Value.ToString());
                 FrmAddSTD frmStd = new FrmAddSTD(id);
                 frmStd.Text = "FrmEditSTD";
+
+                frmStd.OnUpdateDB += () => { dataGridView1.DataSource = new StudentLogic().GetAllStd().ToList(); };
                 frmStd.ShowDialog();
             }
             else if (e.ColumnIndex == 1)//remove
@@ -73,6 +75,7 @@ namespace UI
             else if (e.ColumnIndex == 6)
             {
                 new FrmRegisterCourse(int.Parse(dataGridView1.CurrentRow.Cells[2].Value.ToString())).ShowDialog();
+
             }
 
         }
